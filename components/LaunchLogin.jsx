@@ -43,10 +43,10 @@ const LaunchLogin = () => {
           100% { transform: translate(60px, 60px); }
         }
         .launch-input::placeholder { color: rgba(255, 255, 255, 0.2); }
-        .launch-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3); }
+        .launch-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(249, 115, 22, 0.3); }
         .launch-btn:active { transform: translateY(0); }
-        .social-btn:hover { border-color: rgba(139, 92, 246, 0.5) !important; background: rgba(139, 92, 246, 0.1) !important; }
-        .forgot-link:hover { color: #8B5CF6 !important; }
+        .social-btn:hover { border-color: rgba(249, 115, 22, 0.5) !important; background: rgba(249, 115, 22, 0.1) !important; }
+        .forgot-link:hover { color: #F97316 !important; }
       `}</style>
 
       <div style={{
@@ -64,8 +64,8 @@ const LaunchLogin = () => {
           position: "absolute",
           inset: "-60px",
           backgroundImage: `
-            linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px)
+            linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
           animation: "gridDrift 20s linear infinite",
@@ -77,7 +77,7 @@ const LaunchLogin = () => {
           width: "700px",
           height: "700px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.07) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, transparent 65%)",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -98,12 +98,12 @@ const LaunchLogin = () => {
           <div style={{
             fontSize: "28px",
             animation: "rocketFloat 3s ease-in-out infinite",
-            filter: "drop-shadow(0 0 12px rgba(139, 92, 246, 0.4))",
+            filter: "drop-shadow(0 0 12px rgba(249, 115, 22, 0.4))",
           }}>🚀</div>
           <div style={{
             width: "2px",
             height: "80px",
-            background: "linear-gradient(to bottom, rgba(139, 92, 246, 0.5), transparent)",
+            background: "linear-gradient(to bottom, rgba(249, 115, 22, 0.5), transparent)",
             animation: "trailFade 3s ease-in-out infinite",
             marginTop: "-4px",
             borderRadius: "2px",
@@ -128,7 +128,7 @@ const LaunchLogin = () => {
           <div style={{
             width: "1px",
             height: "50px",
-            background: "linear-gradient(to bottom, rgba(139, 92, 246, 0.3), transparent)",
+            background: "linear-gradient(to bottom, rgba(249, 115, 22, 0.3), transparent)",
             animation: "trailFade 4s ease-in-out infinite 1s",
             marginTop: "-2px",
           }} />
@@ -153,7 +153,7 @@ const LaunchLogin = () => {
               letterSpacing: "-3px",
               fontFamily: "'Space Mono', monospace",
             }}>
-              <span style={{ color: "#8B5CF6" }}>L</span>AUNCH
+              <span style={{ color: "#F97316" }}>L</span>AUNCH
             </div>
             <div style={{
               fontSize: "10px",
@@ -194,9 +194,9 @@ const LaunchLogin = () => {
                     border: "none",
                     borderRadius: "9px",
                     background: activeTab === tab
-                      ? "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1))"
+                      ? "linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.1))"
                       : "transparent",
-                    color: activeTab === tab ? "#8B5CF6" : "rgba(255, 255, 255, 0.35)",
+                    color: activeTab === tab ? "#F97316" : "rgba(255, 255, 255, 0.35)",
                     fontSize: "11px",
                     fontWeight: 600,
                     letterSpacing: "2.5px",
@@ -302,8 +302,8 @@ const LaunchLogin = () => {
                       boxSizing: "border-box",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "rgba(139, 92, 246, 0.5)";
-                      e.target.style.boxShadow = "0 0 0 3px rgba(139, 92, 246, 0.08)";
+                      e.target.style.borderColor = "rgba(249, 115, 22, 0.5)";
+                      e.target.style.boxShadow = "0 0 0 3px rgba(249, 115, 22, 0.08)";
                     }}
                     onBlur={(e) => {
                       e.target.style.borderColor = "rgba(255, 255, 255, 0.08)";
@@ -343,8 +343,8 @@ const LaunchLogin = () => {
                     boxSizing: "border-box",
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = "rgba(139, 92, 246, 0.5)";
-                    e.target.style.boxShadow = "0 0 0 3px rgba(139, 92, 246, 0.08)";
+                    e.target.style.borderColor = "rgba(249, 115, 22, 0.5)";
+                    e.target.style.boxShadow = "0 0 0 3px rgba(249, 115, 22, 0.08)";
                   }}
                   onBlur={(e) => {
                     e.target.style.borderColor = "rgba(255, 255, 255, 0.08)";
@@ -384,8 +384,8 @@ const LaunchLogin = () => {
                       boxSizing: "border-box",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "rgba(139, 92, 246, 0.5)";
-                      e.target.style.boxShadow = "0 0 0 3px rgba(139, 92, 246, 0.08)";
+                      e.target.style.borderColor = "rgba(249, 115, 22, 0.5)";
+                      e.target.style.boxShadow = "0 0 0 3px rgba(249, 115, 22, 0.08)";
                     }}
                     onBlur={(e) => {
                       e.target.style.borderColor = "rgba(255, 255, 255, 0.08)";
@@ -410,7 +410,7 @@ const LaunchLogin = () => {
                       padding: "4px",
                       transition: "color 0.2s ease",
                     }}
-                    onMouseEnter={(e) => e.target.style.color = "#8B5CF6"}
+                    onMouseEnter={(e) => e.target.style.color = "#F97316"}
                     onMouseLeave={(e) => e.target.style.color = "rgba(255, 255, 255, 0.25)"}
                   >
                     {showPassword ? "HIDE" : "SHOW"}
@@ -449,8 +449,8 @@ const LaunchLogin = () => {
                   border: "none",
                   borderRadius: "12px",
                   background: isLoading
-                    ? "rgba(139, 92, 246, 0.3)"
-                    : "linear-gradient(135deg, #8B5CF6, #A78BFA)",
+                    ? "rgba(249, 115, 22, 0.3)"
+                    : "linear-gradient(135deg, #F97316, #FB923C)",
                   color: "#ffffff",
                   fontSize: "13px",
                   fontWeight: 600,
@@ -501,7 +501,7 @@ const LaunchLogin = () => {
                   href="#"
                   className="forgot-link"
                   onClick={(e) => { e.preventDefault(); setActiveTab("signup"); }}
-                  style={{ color: "#8B5CF6", textDecoration: "none", fontWeight: 500 }}
+                  style={{ color: "#F97316", textDecoration: "none", fontWeight: 500 }}
                 >
                   Apply to LAUNCH
                 </a>
@@ -513,7 +513,7 @@ const LaunchLogin = () => {
                   href="#"
                   className="forgot-link"
                   onClick={(e) => { e.preventDefault(); setActiveTab("login"); }}
-                  style={{ color: "#8B5CF6", textDecoration: "none", fontWeight: 500 }}
+                  style={{ color: "#F97316", textDecoration: "none", fontWeight: 500 }}
                 >
                   Log in
                 </a>
