@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const LaunchLogin = () => {
   const [email, setEmail] = useState("");
@@ -6,6 +6,22 @@ const LaunchLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("login");
+  const [apiStatus, setApiStatus] = useState(null);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    // Test API connectivity
+    fetch("/api/hello")
+      .then((r) => r.json())
+      .then((data) => setApiStatus(data))
+      .catch(() => setApiStatus({ ok: false, error: "Failed to reach API" }));
+
+    // Fetch messages from Supabase via API route
+    fetch("/api/messages")
+      .then((r) => r.json())
+      .then((data) => { if (Array.isArray(data)) setMessages(data); })
+      .catch(() => {});
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -530,6 +546,66 @@ const LaunchLogin = () => {
             letterSpacing: "0.5px",
           }}>
             By continuing, you agree to our Terms of Service & Privacy Policy
+          </div>
+
+          {/* Supabase Status Panel */}
+          <div style={{
+            marginTop: "32px",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)",
+            border: "1px solid rgba(255, 255, 255, 0.06)",
+            borderRadius: "16px",
+            padding: "20px 24px",
+            backdropFilter: "blur(16px)",
+          }}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginBottom: "16px",
+            }}>
+              <div style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: apiStatus?.ok ? "#22c55e" : apiStatus ? "#ef4444" : "rgba(255,255,255,0.2)",
+                boxShadow: apiStatus?.ok ? "0 0 8px rgba(34,197,94,0.5)" : "none",
+              }} />
+              <span style={{
+                fontSize: "9px",
+                color: "rgba(255,255,255,0.4)",
+                letterSpacing: "2.5px",
+                textTransform: "uppercase",
+                fontFamily: "'Space Mono', monospace",
+              }}>
+                {apiStatus?.ok ? "Supabase Connected" : apiStatus ? "Connection Failed" : "Checking..."}
+              </span>
+            </div>
+
+            {messages.length > 0 && (
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                {messages.map((msg) => (
+                  <div key={msg.id} style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: "10px",
+                    fontSize: "12px",
+                  }}>
+                    <span style={{
+                      color: "#F97316",
+                      fontSize: "9px",
+                      fontFamily: "'Space Mono', monospace",
+                      letterSpacing: "1px",
+                      flexShrink: 0,
+                    }}>
+                      {msg.author}
+                    </span>
+                    <span style={{ color: "rgba(255,255,255,0.5)" }}>
+                      {msg.content}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
